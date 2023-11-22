@@ -1,0 +1,80 @@
+$text-color: #FFFFFF;
+$sidebar-length: 290px;
+
+.text-color {
+    color: $text-color;
+}
+
+.sidebar {
+    max-width: $sidebar-length;
+}
+
+.navbar-item {
+    // max-width: 290px;
+    // color: #56F09F;
+    background-color: #56F09F14;
+    border: 0px solid #56F09F14;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.active-item {
+    font-size: 16px;
+    border: 0px solid #56F09F14;
+    border-radius: 10px 0px 0px 0px;
+    color: #56F09F;
+    background-color: #56F09F24;
+}
+
+.active-link {
+    color: #56F09F;
+}
+
+.btn-logout {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.0041em;
+    text-align: center;
+    color: white;
+    // box-shadow: ;
+    width: 210px;
+    height: 49px;
+    border-radius: 9px;
+    background-color: green;
+}
+
+.header-bar {
+    width: 45px;
+    height: 46.47px;
+    border: 1.2px;
+}
+
+.greeting {
+    background-color: #19B03F29;
+}
+
+.line {
+    border: 2px solid #0000000D
+}
+
+.creative-card {
+    width: 238px;
+    // height: 287px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 16px 3px #4425A708;
+    // color: #FFFFFF;
+}
+
+.photo {
+    width: 95px;
+    height: 95px;
+}
+
+.bottom {
+    background-color: #19B03F29;
+}
+
+.email-id {
+    // color: #FFFFFF;
+}

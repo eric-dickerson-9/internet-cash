@@ -1,0 +1,21 @@
+// Import Bootstrap styles
+@import "~bootstrap/scss/bootstrap";
+
+// Custom styles
+a,
+.nav-link,
+.dropdown-item,
+.dropdown-toggle,
+.bi {
+    color: #FFFFFF !important; // Set the text color to white
+}
+
+// Override Bootstrap's link color in the dropdown toggle
+.dropdown-toggle {
+    color: #FFFFFF !important;
+}
+
+// Additional styling for the navigation links if needed
+#menu a {
+    // Add any additional styles for the navigation links here
+}
