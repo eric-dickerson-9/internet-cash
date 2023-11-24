@@ -7,11 +7,10 @@ $sidebar-length: 290px;
 
 .sidebar {
     max-width: $sidebar-length;
+    min-width: 200px;
 }
 
 .navbar-item {
-    // max-width: 290px;
-    // color: #56F09F;
     background-color: #56F09F14;
     border: 0px solid #56F09F14;
     border-radius: 10px 0px 0px 10px;
@@ -59,6 +58,7 @@ $sidebar-length: 290px;
 }
 
 .creative-card {
+    max-height: 287px;
     width: 238px;
     // height: 287px;
     border-radius: 12px;
@@ -71,10 +71,165 @@ $sidebar-length: 290px;
     height: 95px;
 }
 
-.bottom {
+.rating-color-green {
     background-color: #19B03F29;
 }
 
-.email-id {
-    // color: #FFFFFF;
+.rating-color-yellow {
+    background-color: #FFD75C30;
+}
+
+.creator-performance {
+    width: 184px;
+    height: 159px;
+    color: #000000;
+    border: 0px solid #000000;
+    border-radius: 12px;
+    box-shadow: 3px 4px 16px 3px #4425A708;
+}
+
+.performance-bar {
+    border-radius: 12px;
+    box-shadow: 3px 4px 16px 3px #4425A708;
+}
+
+.mask {
+    max-width: 184px;
+}
+
+.scrollbar {
+    margin-left: 0px;
+    float: left;
+    height: 800px;
+    width: 20px;
+    background: #fff;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+.force-overflow {
+    min-height: 1920px;
+}
+
+
+.scrollbar-success::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.scrollbar-success::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+.scrollbar-success::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #00C851;
+}
+
+.scrollbar-success {
+    scrollbar-color: #00C851 #F5F5F5;
+}
+
+.color-mark {
+    width: 28px;
+    height: 14px;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.map {
+    border: 0px solid #000000;
+    border-radius: 12px;
+    box-shadow: 3px 4px 16px 3px #4425A708;
+}
+
+//customize scrollbar of react select
+/* Custom styles for the react-select dropdown */
+.react-select__menu {
+    /* Set a fixed height for the dropdown to enable scrolling */
+    max-height: 200px;
+}
+
+/* Custom styles for the react-select dropdown */
+.react-select__menu {
+    /* Set a fixed height for the dropdown to enable scrolling */
+    max-height: 200px;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Style the scrollbar */
+.react-select__menu ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.react-select__menu ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #00C851;
+    /* Match the thumb color from your reference */
+}
+
+.react-select__menu ::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+/* Optional: Change the appearance on hover */
+.react-select__menu:hover ::-webkit-scrollbar-thumb {
+    background-color: #00833e;
+    /* Change the hover color to a slightly darker shade */
+}
+
+//outlined checkbox
+
+.checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+}
+
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #19B03F4D;
+    border-radius: 7px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 2px;
+    margin-left: -21px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #19B03F;
+}
+
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox input[type="checkbox"]:checked+label::after {
+    font-family: "FontAwesome";
+    content: "\f00c";
 }

@@ -1,10 +1,30 @@
 import Card from './Card'
+import PerformanceBar from './PerformanceBar';
+import PerformanceItem from './PerformanceItem';
+import BarColorItem from './BarColorItem';
+import Map from './Map';
+import MultiSelectCheckbox from './MultiSelectCheckbox';
+import {
+    FacebookShape,
+    TwitterShape,
+    InstagramShape,
+    SnapchatShape,
+    YoutubeShape
+} from './Socials';
+
 const Content = () => {
+    const countryData = [
+        { cx: 670, cy: 90, type: <FacebookShape /> },
+        { cx: 570, cy: 200, type: <InstagramShape /> },
+        { cx: 980, cy: 420, type: <YoutubeShape /> },
+        { cx: 270, cy: 350, type: <TwitterShape /> },
+        { cx: 100, cy: 50, type: <SnapchatShape /> },
+    ];
     return (
         <div className="col py-3 px-5 d-flex flex-column">
             <div className="header">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-sm-2 col-md-4 col-xl-6">
                         <div className="d-flex justify-content-start">
                             <div className="d-flex flex-row gap-3 align-middle">
                                 <h3>Dashboard</h3>
@@ -17,7 +37,7 @@ const Content = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-sm-2 col-md-4 col-xl-6">
                         <div className="d-flex justify-content-end">
                             <div className="d-flex flex-row gap-3 align-middle ">
                                 <div className="alarm">
@@ -37,7 +57,7 @@ const Content = () => {
                                         </div>
                                         <div className="info d-flex flex-column text-start">
                                             <h5>Alexander Mark</h5>
-                                            <h6>Manager</h6>
+                                            <span>Manager</span>
                                         </div>
                                     </div>
                                 </div>
@@ -50,13 +70,13 @@ const Content = () => {
                         <div className="row">
                             <div className="col-4">
                                 <div className="d-flex flex-column text-start">
-                                    <h6>GOOD MORNING</h6>
+                                    <span>GOOD MORNING</span>
                                     <h2>Alexander Mark</h2>
                                 </div>
                             </div>
-                            <div className="col-8 d-flex d-flex align-content-end flex-wrap">
+                            <div className="col-8 d-flex align-content-end flex-wrap">
                                 <div>
-                                    <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</h6>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</span>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +92,7 @@ const Content = () => {
                         <div className="d-flex justify-content-start">
                             <div className="text-start">
                                 <h3 className="fw-bold">My Creators</h3>
-                                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</h6>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</span>
                             </div>
 
                         </div>
@@ -80,21 +100,143 @@ const Content = () => {
                     <div className="col-6">
                         <div className="d-flex justify-content-end align-middle">
                             <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M25 11L20.9812 7.03332C17.7763 3.86997 16.1738 2.28829 14.2207 2.04475C13.7421 1.98508 13.2579 1.98508 12.7793 2.04475C10.8262 2.28829 9.22373 3.86997 6.01881 7.03332L2 11" stroke="#252733" stroke-width="4" stroke-linecap="round" />
+                                <path d="M25 11L20.9812 7.03332C17.7763 3.86997 16.1738 2.28829 14.2207 2.04475C13.7421 1.98508 13.2579 1.98508 12.7793 2.04475C10.8262 2.28829 9.22373 3.86997 6.01881 7.03332L2 11" stroke="#252733" strokeWidth="4" strokeLinecap="round" />
                             </svg>
                         </div>
                     </div>
                 </div>
                 <div className="line"></div><br />
                 <div className="cards d-flex flex-row gap-3">
-                    <Card name='Henry Paul' email="henry.p@mail.com" creative="123" rating="4.5" image="./images/avatars/avatar1.png" />
-                    <Card name='William James' email="william.j@mail.com" creative="220" rating="4.8" image="./images/avatars/avatar2.png" />
-                    <Card name='Evan Jefferson' email="evan.j@mail.com" creative="105" rating="4.2" image="./images/avatars/avatar3.png" />
-                    <Card name='Micle Thomson' email="Micle Thomson" creative="117" rating="4.5" image="./images/avatars/avatar4.png" />
-                    <Card name='Kiara Jesson' email="kiara.j@mail.com" creative="97" rating="4.5" image="./images/avatars/avatar5.png" />
-                    <Card name='Henry Paul' email="henry.p@mail.com" creative="123" rating="3.5" image="./images/avatars/avatar2.png" />
+                    <Card name='Henry Paul' email="henry.p@mail.com" creative="123" rating={4.5} image="./images/avatars/avatar1.png" />
+                    <Card name='William James' email="william.j@mail.com" creative="220" rating={4.8} image="./images/avatars/avatar2.png" />
+                    <Card name='Evan Jefferson' email="evan.j@mail.com" creative="105" rating={4.2} image="./images/avatars/avatar3.png" />
+                    <Card name='Micle Thomson' email="Micle Thomson" creative="117" rating={4.5} image="./images/avatars/avatar4.png" />
+                    <Card name='Kiara Jesson' email="kiara.j@mail.com" creative="97" rating={3.8} image="./images/avatars/avatar5.png" />
+                    <Card name='Henry Paul' email="henry.p@mail.com" creative="123" rating={3.5} image="./images/avatars/avatar2.png" />
                 </div>
 
+            </div>
+            <br />
+            <div className="creators">
+                <div className="row mb-3">
+                    <div className="col-6">
+                        <div className="d-flex justify-content-start">
+                            <div className="text-start">
+                                <h3 className="fw-bold">My Creator's Performance</h3>
+                                <span>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="d-flex justify-content-end align-middle">
+                            <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 11L20.9812 7.03332C17.7763 3.86997 16.1738 2.28829 14.2207 2.04475C13.7421 1.98508 13.2579 1.98508 12.7793 2.04475C10.8262 2.28829 9.22373 3.86997 6.01881 7.03332L2 11" stroke="#252733" strokeWidth="4" strokeLinecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div className="line"></div><br />
+                <div className="row d-flex flex-row px-0">
+                    <div className="col-2">
+                        <div className="d-flex flex-column  gap-3">
+                            <PerformanceItem value={31} info="Creators" image="./images/mask1.png" />
+                            <PerformanceItem value={235} info="Total Creatives" image="./images/mask2.png" />
+                            <PerformanceItem value={107} info="High output Creatives" image="./images/mask3.png" />
+                            <PerformanceItem value={128} info="Low output Creatives" image="./images/mask4.png" />
+                            <PerformanceItem value="$6.03" info="Avg.cost per creative" image="./images/mask5.png" />
+                        </div>
+                    </div>
+                    <div className="col-10 performance-bar p-4">
+                        <div className="d-flex flex-row">
+                            <div className="d-flex flex-column gap-4 w-100">
+                                <PerformanceBar name="Henry Paul" job="Model" image="./images/avatars/henry.svg" primary={10} warning={35} info={25} success={15} danger={15} />
+                                <PerformanceBar name="Noah Harris" job="Photographer" image="./images/avatars/henry.svg" primary={30} warning={5} info={25} success={15} danger={25} />
+                                <PerformanceBar name="Jack Paul" job="Influencer" image="./images/avatars/henry.svg" primary={25} warning={20} info={15} success={25} danger={25} />
+                                <PerformanceBar name="Lucas Buron" job="Model" image="./images/avatars/henry.svg" primary={20} warning={20} info={30} success={15} danger={15} />
+                                <PerformanceBar name="Oliver Wilson" job="Photographer" image="./images/avatars/henry.svg" primary={15} warning={20} info={10} success={35} danger={20} />
+                                <PerformanceBar name="Levi Lewis" job="Influencer" image="./images/avatars/henry.svg" primary={10} warning={40} info={20} success={10} danger={25} />
+                                <PerformanceBar name="Jacksie Owe" job="Influencer" image="./images/avatars/henry.svg" primary={5} warning={45} info={25} success={20} danger={5} />
+                                <PerformanceBar name="Ethan Jane" job="Model" image="./images/avatars/henry.svg" primary={25} warning={15} info={30} success={5} danger={25} />
+                                <PerformanceBar name="Ezra Baker" job="Ezra Baker" image="./images/avatars/henry.svg" primary={20} warning={15} info={15} success={45} danger={5} />
+                                <PerformanceBar name="Allen Foster" job="Allen Foster" image="./images/avatars/henry.svg" primary={10} warning={15} info={25} success={25} danger={25} />
+                                <PerformanceBar name="Angel Webb" job="Influencer" image="./images/avatars/henry.svg" primary={20} warning={5} info={45} success={20} danger={10} />
+                            </div>
+                            <div className="scrollbar scrollbar-success">
+                                <div className="force-overflow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br />
+                <div className="row">
+                    <div className="d-flex flex-row justify-content-end align-items-start gap-4">
+                        <span className="h5">Social media</span>
+                        <BarColorItem color="primary" social="Facebook" />
+                        <BarColorItem color="warning" social="Snapchat" />
+                        <BarColorItem color="info" social="Twitter" />
+                        <BarColorItem color="success" social="Instagram" />
+                        <BarColorItem color="danger" social="Youtube" />
+                    </div>
+                </div>
+            </div>
+            <br /><br />
+            <div className="byregion">
+                <div className="row mb-3">
+                    <div className="col-6">
+                        <div className="d-flex justify-content-start">
+                            <div className="text-start">
+                                <span className="fw-bold h3">Creators Performance By Region</span><br />
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="d-flex justify-content-end align-middle">
+                            <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 11L20.9812 7.03332C17.7763 3.86997 16.1738 2.28829 14.2207 2.04475C13.7421 1.98508 13.2579 1.98508 12.7793 2.04475C10.8262 2.28829 9.22373 3.86997 6.01881 7.03332L2 11" stroke="#252733" strokeWidth="4" strokeLinecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div className="line"></div><br />
+                <div className="map p-3">
+                    <div className="d-flex flex-column">
+                        <div className="row d-flex flex-row justify-content-end align-items-center h5">
+                            Select creators
+                            <div className="col-md-2">
+                                <MultiSelectCheckbox />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="world-map ">
+                        <Map countryData={countryData} />
+                        <div className="row">
+                            <div className="col-md-6 col-sm-12">
+                                <div className="d-flex justify-content-start">
+                                    <svg width="203" height="48" viewBox="0 0 203 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                                        <rect y="0.212891" width="203" height="47" fill="url(#pattern0)" />
+                                        <defs>
+                                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlinkHref="#image0_121_1177" transform="matrix(0.00232019 0 0 0.0100212 0 -0.0160932)" />
+                                            </pattern>
+                                            <image id="image0_121_1177" width="431" height="103" xlinkHref="data:image/png;base64,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" />
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-sm-12">
+                                <div className="d-flex flex-row justify-content-end gap-4">
+                                    <span className="h5">Social media</span>
+                                    <BarColorItem color="primary" social="Facebook" />
+                                    <BarColorItem color="warning" social="Snapchat" />
+                                    <BarColorItem color="info" social="Twitter" />
+                                    <BarColorItem color="success" social="Instagram" />
+                                    <BarColorItem color="danger" social="Youtube" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

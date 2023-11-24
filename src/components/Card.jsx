@@ -1,11 +1,16 @@
-
+import { useState } from 'react';
 const Card = ({ name, email, creative, rating, image }) => {
+    // Calculate the number of filled stars based on the rating
+    const filledStars = Math.floor(rating);
+
+    // Array to represent the number of stars
+    const starsArray = Array.from({ length: 5 }, (_, index) => index);
     return (
         <div className="creative-card">
-            <div class="position-relative">
-                <div class="position-absolute top-0 end-0">
+            <div className="position-relative">
+                <div className="position-absolute top-0 end-0">
                     <div className="p-3">
-                        <i class="bi bi-three-dots-vertical text-secondary"></i>
+                        <i className="bi bi-three-dots-vertical text-secondary"></i>
                     </div>
                 </div>
             </div>
@@ -31,25 +36,15 @@ const Card = ({ name, email, creative, rating, image }) => {
                     <span>{creative}Creatives</span>
                 </div>
             </div>
-            <div className="bottom text-center flex-wrap w-100 p-2 rounded-bottom-3">
+            <div className={`rating-color-${rating > 4 ? 'green' : 'yellow'} text-center flex-wrap w-100 p-2 rounded-bottom-3`}>
                 <div className="d-flex flex-row justify-content-center gap-1">
                     <div className="rating">{rating}</div>
                     <ul className="mb-0 list-unstyled d-flex flex-row gap-1">
-                        <li>
-                            <i className="bi bi-star-fill text-success"></i>
-                        </li>
-                        <li>
-                            <i className="bi bi-star-fill text-success"></i>
-                        </li>
-                        <li>
-                            <i className="bi bi-star-fill text-success"></i>
-                        </li>
-                        <li>
-                            <i className="bi bi-star-fill text-success"></i>
-                        </li>
-                        <li>
-                            <i className="bi bi-star text-success"></i>
-                        </li>
+                        {starsArray.map((index) => (
+                            <li key={index}>
+                                <i className={`bi bi-star${index < filledStars ? '-fill' : ''} text-${rating > 4 ? 'success' : 'warning'}`}></i>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
