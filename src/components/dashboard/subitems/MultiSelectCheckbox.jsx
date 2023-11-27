@@ -6,8 +6,6 @@ const styles = {
         ...base,
         borderColor: '#19B03F59',
         boxShadow: '3px 4px 16px 3px #4425A708'
-
-
     }),
     option: (base, state) => ({
         ...base,
@@ -26,9 +24,7 @@ const styles = {
             background: "#f1f1f1"
         },
         "::-webkit-scrollbar-thumb": {
-            background: "#888",
             borderRadius: '10px',
-            // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
             background: '#00C851'
         },
         "::-webkit-scrollbar-thumb:hover": {
@@ -51,15 +47,13 @@ const Option = (props) => {
                             <label>&nbsp;{props.label}</label>
                         </div>
                     </div>
-
                 </div>
-
             </components.Option>
         </div>
     );
 };
 
-const MultiSelectCheckbox = () => {
+const MultiSelectCheckbox = ({ onSelect }) => {
     const [selectedOptions, setSelectedOptions] = useState(null);
 
     const options = [
@@ -77,7 +71,7 @@ const MultiSelectCheckbox = () => {
     ];
     const handleChange = (selectedOptions) => {
         setSelectedOptions(selectedOptions);
-        console.log(`Options selected:`, selectedOptions);
+        onSelect(selectedOptions)
     };
 
     return (
@@ -90,7 +84,6 @@ const MultiSelectCheckbox = () => {
                 components={{ Option }}
                 styles={styles}
             />
-            {/* <AsyncSelect cacheOptions defaultOptions loadOptions={promiseOptions} components={{ Option }} /> */}
         </div>
     );
 };

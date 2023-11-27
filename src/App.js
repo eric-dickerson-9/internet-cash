@@ -1,16 +1,20 @@
-import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom";
 import './App.scss';
 import './styles/dashboard.scss';
 import Sidebar from './components/Sidebar';
-import Content from './components/Content';
+import NotFound from './pages/NotFound'
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <div className="row flex-nowrap">
           <Sidebar />
-          <Content />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </div>

@@ -12,10 +12,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+import { MyContextProvider } from './context/MyContext';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MyContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </MyContextProvider>
   </React.StrictMode>
 );
 

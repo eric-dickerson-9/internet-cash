@@ -1,4 +1,8 @@
 $text-color: #FFFFFF;
+$primary-color: #56F09F;
+$secondary-color: #19B03F;
+$black-green: #56F09F14;
+
 $sidebar-length: 290px;
 
 .text-color {
@@ -7,46 +11,55 @@ $sidebar-length: 290px;
 
 .sidebar {
     max-width: $sidebar-length;
-    min-width: 200px;
 }
 
 .navbar-item {
-    background-color: #56F09F14;
-    border: 0px solid #56F09F14;
+    background-color: $black-green;
+    border: 0px solid $black-green;
     border-radius: 10px 0px 0px 10px;
 }
 
 .active-item {
     font-size: 16px;
-    border: 0px solid #56F09F14;
+    border: 0px solid $black-green;
     border-radius: 10px 0px 0px 0px;
-    color: #56F09F;
-    background-color: #56F09F24;
+    color: $primary-color;
+    background-color: $black-green;
 }
 
 .active-link {
-    color: #56F09F;
+    color: $primary-color;
 }
 
-.btn-logout {
-    font-family: Montserrat;
+.logout-btn {
+    color: $text-color;
+    background: $secondary-color;
+    height: 49px;
+    width: 100%;
+    border-bottom: 3px solid #097524;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 10px;
+    font-family: "Montserrat-SemiBold", Helvetica;
     font-size: 16px;
     font-weight: 600;
-    line-height: 20px;
-    letter-spacing: -0.0041em;
-    text-align: center;
-    color: white;
-    // box-shadow: ;
-    width: 210px;
-    height: 49px;
-    border-radius: 9px;
-    background-color: green;
 }
 
 .header-bar {
     width: 45px;
     height: 46.47px;
     border: 1.2px;
+}
+
+.font-manrop {
+    font-family: 'Manrope';
+}
+
+.font-montserrat {
+    font-family: 'Montserrat';
+    ;
+
 }
 
 .greeting {
@@ -60,10 +73,19 @@ $sidebar-length: 290px;
 .creative-card {
     max-height: 287px;
     width: 238px;
-    // height: 287px;
+    height: 287px;
     border-radius: 12px;
     box-shadow: 3px 4px 16px 3px #4425A708;
     // color: #FFFFFF;
+}
+
+.email-id {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
 }
 
 .photo {
@@ -81,7 +103,7 @@ $sidebar-length: 290px;
 
 .creator-performance {
     width: 184px;
-    height: 159px;
+    // height: 159px;
     color: #000000;
     border: 0px solid #000000;
     border-radius: 12px;
@@ -93,10 +115,6 @@ $sidebar-length: 290px;
     box-shadow: 3px 4px 16px 3px #4425A708;
 }
 
-.mask {
-    max-width: 184px;
-}
-
 .scrollbar {
     margin-left: 0px;
     float: left;
@@ -104,7 +122,6 @@ $sidebar-length: 290px;
     width: 20px;
     background: #fff;
     overflow-y: scroll;
-    margin-bottom: 25px;
 }
 
 .force-overflow {
@@ -219,7 +236,7 @@ $sidebar-length: 290px;
     padding-left: 3px;
     padding-top: 1px;
     font-size: 11px;
-    color: #19B03F;
+    color: $secondary-color;
 }
 
 .checkbox input[type="checkbox"] {
@@ -232,4 +249,18 @@ $sidebar-length: 290px;
 .checkbox input[type="checkbox"]:checked+label::after {
     font-family: "FontAwesome";
     content: "\f00c";
+}
+
+.card-wrap :nth-child(1) :nth-child(2) {
+    max-width: 1550px !important;
+}
+
+.card-wrap :first-child {
+    position: relative;
+}
+
+.card-badge {
+    position: absolute;
+    right: 1%;
+    top: 2%;
 }
